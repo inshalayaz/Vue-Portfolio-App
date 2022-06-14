@@ -2,7 +2,7 @@
 <div>
     <div class="header">
         <div class="theme-switch">
-            <v-btn>
+            <v-btn @click="toggleTheme">
                 <v-icon> {{lightBulb}} </v-icon>
             </v-btn>
         </div>
@@ -32,7 +32,7 @@ export default {
                 {id: 2, name: 'Portfolio', icon: mdiBriefcase, route:'/portfolio' ,isHovered: false},
                 {id: 3, name: 'Contact', icon: mdiEmailNewsletter, route:'/contact' ,isHovered: false},    
                 ],
-                lightBulb: mdiLightbulbOnOutline
+                lightBulb: mdiLightbulbOnOutline,
                 
         }
     },
@@ -42,6 +42,15 @@ export default {
         },
         handleMouseOut(item){
             item.isHovered = false
+        },
+        toggleTheme(){
+            
+            this.$vuetify.theme.isDark = !this.$vuetify.theme.isDark
+            if(this.$vuetify.theme.isDark){
+                localStorage.setItem('darkMode', 1)
+            }else{
+                localStorage.setItem('darkMode', 0)
+            }
         }
     }
     

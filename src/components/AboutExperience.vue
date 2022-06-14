@@ -32,7 +32,7 @@ export default {
                 [
                     {id: 0, start: '2019', end: 'Present', title: 'Web Developer', place: 'Freelance', text: 'Working as a Freelance Web Developer', icon: mdiBriefcase}, 
                     {id: 1, start: '2021', end: '2022', title: 'TechSoul PK', place: 'Full Stack Developer', text: 'Worked as a Full Stack Developer in TechSoul Pk working on Laravel', icon: mdiBriefcase}, 
-                    {id: 2, start: '2022', end: 'Present', title: 'Securiti', place: 'Front-End Developer', text: 'Working as an Intern in Securiti.ai', icon: mdiBriefcase}, 
+                    {id: 2, start: '2022', end: 'Present', title: 'Securiti', place: 'Front-End Developer', text: 'Working as an Intern at Securiti.ai', icon: mdiBriefcase}, 
                 ],
                 [
                     {id: 0, start: '2004', end: '2017', title: 'School', place: 'Karachi Public School', text: 'Completed my O\'levels from KPS.', icon: mdiSchoolOutline}, 

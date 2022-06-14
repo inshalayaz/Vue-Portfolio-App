@@ -1,6 +1,6 @@
 <template>
     <v-btn class="pr-0 new-btn" color="secondary" @click="handleSubmit" outlined rounded x-large >
-        {{value}}
+         <span class="text--primary">{{value}}</span> 
         <v-icon color="white" class="btn-icon" > {{icon}} </v-icon>
     </v-btn>
 </template>

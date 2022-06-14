@@ -19,15 +19,20 @@ export default {
     Header,
   },
 
-  data: () => ({
-    //
-  }),
+
+ mounted(){
+  if(localStorage.getItem('darkMode') == 0){
+    this.$vuetify.theme.isDark = false
+  }else {
+    this.$vuetify.theme.isDark = true
+  }
+ }
+
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
-  *::-webkit-scrollbar {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;1,300&display=swap');  *::-webkit-scrollbar {
   display: none;
 }
 

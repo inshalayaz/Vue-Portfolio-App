@@ -1,7 +1,7 @@
 <template>
      <div class="contact-heading">
         <h1>{{heading}} <span class="secondary--text">{{span}}</span></h1>
-        <span class="title-big">{{title}}</span>
+        <span class="title-big" :class="this.$vuetify.theme.isDark ? titleColorDark : titleColorLight " >{{title}}</span>
     </div>
 </template>
 
@@ -9,7 +9,13 @@
 <script>
 export default {
     name: 'pageTitle',
-    props: ['heading', 'span', 'title']
+    props: ['heading', 'span', 'title'],
+    data(){
+        return {
+            titleColorDark: 'title-color-dark',
+            titleColorLight: 'title-color-light'
+        }
+    }
 }
 </script>
 
@@ -35,6 +41,11 @@ export default {
         text-transform: uppercase;
         font-weight: 800;
         transform: translateY(-50%);
-        color: hsla(0,0%,100%,.07);
+    }
+    .title-color-dark{
+         color: hsla(0,0%,100%,.07);
+    }
+    .title-color-light{
+         color: rgba(15, 15, 15, 0.07);
     }
     </style>
