@@ -6,25 +6,34 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     formData: {
-      fullName: '',
-      email: '',
-      subject: '',
-      message: ''
-    }
+      fullName: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    isMobile: false,
   },
   mutations: {
-    updateName (state, value) {
-      state.formData.fullName = value
+    updateName(state, value) {
+      state.formData.fullName = value;
     },
-    updateEmail (state, value) {
-      state.formData.email = value
+    updateEmail(state, value) {
+      state.formData.email = value;
     },
-    updateSubject (state, value) {
-      state.formData.subject = value
+    updateSubject(state, value) {
+      state.formData.subject = value;
     },
-    updateMessage (state, value) {
-      state.formData.message = value
-    }
+    updateMessage(state, value) {
+      state.formData.message = value;
+    },
+    changeToMobile(state, payload) {
+      console.log("Hi");
+      state.isMobile = payload;
+    },
   },
-  actions: {}
+  actions: {
+    changeToMobile(context, value) {
+      context.commit("changeToMobile", value);
+    },
+  },
 });
