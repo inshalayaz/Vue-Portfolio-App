@@ -27,23 +27,30 @@
     </div>
 
     <!-- Mobile Nav -->
-    <v-app-bar color="dark mobile-header" v-else light>
+    <v-app-bar color="secondary mobile-header" v-else>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" class="drawer" right>
+      <div class="mt-4 ml-4 mb-5">
+        <v-btn @click="toggleTheme">
+          <v-icon> {{ lightBulb }} </v-icon>
+        </v-btn>
+      </div>
       <v-list nav dense>
         <v-list-item-group v-model="group" active-class="white--text">
           <v-list-item v-for="item in navItems" :key="item.id">
-            <router-link :to="item.route" class="mobile-nav-link">
-              <h4 class="white--text ml-4">
+            <router-link
+              :to="item.route"
+              class="mobile-nav-link text-decoration-none"
+            >
+              <h4 class="ml-4 text--secondary">
                 {{ item.name }}
               </h4>
-              <v-icon class="menu-icon " color="#fff">
+              <v-icon class="menu-icon">
                 {{ item.icon }}
               </v-icon>
             </router-link>
-            <!-- <v-list-item-title>Foo</v-list-item-title> -->
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -201,7 +208,7 @@
   }
 
   .drawer {
-    position: absolute;
+    position: fixed;
     z-index: 3;
     opacity: 0.97;
     top: 9% !important;
