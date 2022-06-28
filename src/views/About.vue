@@ -185,5 +185,8 @@
     .cv-btn-container {
       text-align: center;
     }
+    .about-list li {
+      flex: 100%;
+    }
   }
 </style>
