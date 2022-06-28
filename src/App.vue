@@ -19,6 +19,16 @@
       Header,
     },
 
+    created() {
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.outerWidth > 960) {
+          this.$store.dispatch("changeToMobile", false);
+        } else {
+          this.$store.dispatch("changeToMobile", true);
+        }
+      });
+    },
+
     mounted() {
       if (localStorage.getItem("darkMode") == 0) {
         this.$vuetify.theme.isDark = false;
@@ -27,7 +37,12 @@
       }
 
       window.addEventListener("resize", () => {
-        if (window.innerWidth > 960) {
+        if (window.outerWidth > 960) {
+          this.$store.dispatch("changeToMobile", false);
+        } else {
+          this.$store.dispatch("changeToMobile", true);
+        }
+        if (window.outerWidth > 960) {
           this.$store.dispatch("changeToMobile", false);
         } else {
           this.$store.dispatch("changeToMobile", true);
@@ -41,6 +56,10 @@
   @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;1,300&display=swap");
   *::-webkit-scrollbar {
     display: none;
+  }
+
+  body {
+    overflow-x: hidden !important;
   }
 
   .slide-fade-enter-active {

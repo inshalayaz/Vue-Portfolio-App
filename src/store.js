@@ -27,7 +27,6 @@ export default new Vuex.Store({
       state.formData.message = value;
     },
     changeToMobile(state, payload) {
-      console.log("Hi");
       state.isMobile = payload;
     },
   },
